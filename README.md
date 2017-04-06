@@ -1,2 +1,2 @@
 # Experimenting with Github pages
-<a href="amitgupta15.github.io">Check it out</a>
+<a href="https://amitgupta15.github.io">Check it out</a>
