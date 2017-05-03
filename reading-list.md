@@ -20,7 +20,17 @@ permalink: /reading-list/
 
 - **[Agile Software Development - Principles, Patterns, and Practices](https://www.amazon.com/Software-Development-Principles-Patterns-Practices/dp/0135974445/ref=asap_bc?ie=UTF8)** ([Robert C. Martin](https://www.amazon.com/Robert-C.-Martin/e/B000APG87E/ref=dp_byline_cont_book_1))
 
-  Chapter 6 - Programming Episode is my favorite chapter in this book.
+  I have never done pair programming myself but I learned how successful
+  pair programming should work from Chapter 6 - Programming Episode is
+  my favorite chapter in this book. The book is also a very articulate
+  primer on SOLID principles of software development.
 
+- **[Refactoring - Improving The Design of Existing Code](https://smile.amazon.com/Refactoring-Improving-Design-Existing-Code/dp/0201485672/ref=asap_bc?ie=UTF8)** ([Martin Fowler](https://smile.amazon.com/Martin-Fowler/e/B000AQ6PGM/ref=sr_ntt_srch_lnk_1?qid=1493838906&sr=8-1))
 
+  Refactoring is an ongoing process. It should never stop as long as
+  code is alive and is being regularly updated. You also need proper
+  supporting code such as unit tests, etc. to refactor with confidence.
+  This book teaches you how to detect code smells and fix those with
+  principled refactoring process.
+ 
 {% include disqus.html %}
