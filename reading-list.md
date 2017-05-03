@@ -14,16 +14,16 @@ permalink: /reading-list/
   about meaningful names. I gladly admit I was wrong. I read the entire
   chapter twice.
   [Robert C. Martin](https://www.amazon.com/Robert-C.-Martin/e/B000APG87E/ref=dp_byline_cont_book_1)
-  taught me things I didn't know I needed to learn. This is by the best
-  book on coding.
+  taught me things I didn't know I needed to learn. This is by far the
+  best book on coding.
 
 
 - **[Agile Software Development - Principles, Patterns, and Practices](https://www.amazon.com/Software-Development-Principles-Patterns-Practices/dp/0135974445/ref=asap_bc?ie=UTF8)** ([Robert C. Martin](https://www.amazon.com/Robert-C.-Martin/e/B000APG87E/ref=dp_byline_cont_book_1))
 
-  I have never done pair programming myself but I learned how successful
-  pair programming should work from Chapter 6 - Programming Episode is
-  my favorite chapter in this book. The book is also a very articulate
-  primer on SOLID principles of software development.
+  I have never done pair programming myself but I learned how effective
+  pair programming can be from Chapter 6 - Programming Episode. The book
+  is also articulates the merits of SOLID principles of software
+  development.
 
 - **[Refactoring - Improving The Design of Existing Code](https://smile.amazon.com/Refactoring-Improving-Design-Existing-Code/dp/0201485672/ref=asap_bc?ie=UTF8)** ([Martin Fowler](https://smile.amazon.com/Martin-Fowler/e/B000AQ6PGM/ref=sr_ntt_srch_lnk_1?qid=1493838906&sr=8-1))
 
@@ -32,5 +32,5 @@ permalink: /reading-list/
   supporting code such as unit tests, etc. to refactor with confidence.
   This book teaches you how to detect code smells and fix those with
   principled refactoring process.
- 
+
 {% include disqus.html %}
