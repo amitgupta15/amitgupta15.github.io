@@ -15,5 +15,5 @@ var introduction = function() {
 This blog is sort of a diary where I share and document things I learn in my quest to become a better software developer.
   In these pages, I intend to write some tutorials and share some experiences.
 
-{% include ../_includes/disqus.html %}
+{% include disqus.html %}
 
