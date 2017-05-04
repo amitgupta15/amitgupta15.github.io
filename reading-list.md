@@ -33,7 +33,8 @@ permalink: /reading-list/
   This book teaches you how to detect code smells and fix those with
   principled refactoring process.
 
-- **[Head First Design Patterns](https://smile.amazon.com/Head-First-Design-Patterns-Brain-Friendly/dp/0596007124/ref=sr_1_1?s=books&ie=UTF8&qid=1493934073&sr=1-1&keywords=head+first+design+patterns)**
+- **
+  [Head First Design Patterns](https://smile.amazon.com/Head-First-Design-Patterns-Brain-Friendly/dp/0596007124/ref=sr_1_1?s=books&ie=UTF8&qid=1493934073&sr=1-1&keywords=head+first+design+patterns)**
   (Eric Freeman, Elisabeth Robson, Kathy Sierra & Bert Bates)
 
   Patterns are an integral part of good software design. Strategy,
