@@ -42,4 +42,7 @@ permalink: /reading-list/
   Since then I have read it a few more times and I keep it on my desk as
   a reference.
 
+- **[Effective JavaScript: 68 Specific Ways to Harness the Power of JavaScript](https://smile.amazon.com/Effective-JavaScript-Specific-Software-Development/dp/0321812182/ref=sr_1_1?ie=UTF8&qid=1494008311&sr=8-1&keywords=effective+javascript)** ([David Herman](https://smile.amazon.com/David-Herman/e/B00DWIBH6I/ref=dp_byline_cont_book_1))
+
+  A comprehensive introduction to Javascript.
 {% include disqus.html %}
