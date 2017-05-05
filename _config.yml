@@ -1,8 +1,7 @@
 title: Amit's Blog
 email: amitgupta15@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  This blog is sort of a diary where I share and document things I learn in my quest to become a better software developer.
-  In these pages, I intend to write some tutorials and share some experiences.
+  Sharing and learning.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://amitgupta15.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: amitgupta15
