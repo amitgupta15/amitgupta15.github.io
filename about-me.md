@@ -21,12 +21,12 @@ var profile = function() {
 
     var languages = ['Java','Javascript','Objective-C','Swift','ColdFusion','PHP','Kotlin'];
     var frameworks = ['Spring','Spring Boot', 'Express.js'];
-    var web = ['HTML5','AngularJS','RequireJS','CSS','SASS','LESS','npm','bower'];
+    var frontend = ['HTML5','AngularJS','RequireJS','CSS','SASS','LESS','npm','bower'];
     var servers = ['Tomcat','Node.js','Weblogic','Apache HTTP Server'];
     var buildTools = ['Maven','Jake','Grunt','Gulp'];
     var persistence = ['MongoDB','MySQL','MS SQLServer','Oracle','PostgreSQL'];
     var essentialSkills = ['Design Patterns','Test Driven Development','Refactoring'];
-    var testingFrameworks = ['JUnit4','Mocha','Jasmine','Karma','Chai']
+    var testingFrameworks = ['JUnit4','Mocha','Jasmine','Karma','Chai'];
 
 };
 {% endhighlight %}
