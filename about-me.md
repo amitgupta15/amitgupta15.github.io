@@ -5,15 +5,27 @@ title: About Me
 permalink: /about/
 ---
 
-I'm a software developer. In the past 15 years, my fingertips have
-turned keystrokes into many small and large software applications. Like
-many developers who started their careers in post dot-com-burst era, I
-took the first job offer I got. It was a small startup company and I
-wasn't very picky (I don't think I had that luxury). I agreed to
-whatever pay I was offered and was just happy to have a job.
+Hi, I'm Amit Gupta. I am a software development consultant in Rancho
+Cucamonga (Los Angeles). I've been turning keystrokes into software
+applications for the past 15 years. I started my professional career in
+the post dotcom burst era at a tiny startup.
 
-Since then I have grown older (and perhaps wiser). I have had
-opportunities to work on several projects, languages and frameworks.
+I was a
+[ColdFusion](https://en.wikipedia.org/wiki/Adobe_ColdFusion) developer
+before I learned Java. I've been developing in Java and Spring Framework
+since 2009. I picked up Javascript a couple of years ago and I'm loving
+it. I have couple of projects under development in Javascript with
+Node.js and MongoDB. I also learned AngularJS and I like the flexibility
+AngularJS provides to develop front end.
+
+I'm a TDD enthusiast. I believe good unit tests are absolutely essential
+for quality software. I always use "test first" approach whether I
+develop in Java or Javascript.
+
+I like to learn new programming languages and technologies. I have been
+experimenting with Kotlin lately. I am also inspired by Machine Learning
+and Microservices. I'm trying to find some time to write some
+experimental code for these technologies.
 
 ## Profile
 {% highlight javascript %}
