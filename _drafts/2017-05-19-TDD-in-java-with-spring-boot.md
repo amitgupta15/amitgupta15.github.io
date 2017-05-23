@@ -7,6 +7,7 @@ categories: java, tdd
 ---
 
 
+
 ## Main Idea
 Create a video blog with transcript to show how to do test driven development in Java with spring boot
 
@@ -31,6 +32,23 @@ Create a video blog with transcript to show how to do test driven development in
 
 
 ## TDD
+
+### What is TDD?
+### Should we write integration tests as part of TDD?
+- NO
+### Correct way to practice TDD
+- Automate the tests - One click to run all the tests
+- Fast running tests - less than a second is ideal
+### Show a bad test, ask what is bad about it, then clean up the test
+### What to test?
+- Is it worth writing a test for a method that just prints something?
+- Decide when to write a test
+- Decide what to test - what input, what output?
+- Visibility of methods should be driven by tests. If a method needs to
+  be tested, it is OK to make it protected or public.
+- Test some real logic
+
+
 Test driven development is an emotional subject for developers. Some love it and some hate it with a passion.
 Some are just oblivious to its existence. In my opinion, if you’re writing any program that is doing something more than printing
 ```Hello World```, then you would benefit from TDD.
