@@ -10,9 +10,20 @@ linked_in_username: amitgupta15
 
 # Build settings
 markdown: kramdown
-theme: minima
+permalink: pretty
+
 gems:
   - jekyll-feed
 exclude:
   - Gemfile
   - Gemfile.lock
+  
+social:
+  - title: twitter
+    url: https://twitter.com/amitgupta15
+  - title: github
+    url: https://github.com/amitgupta15
+  - title: linkedin
+    url: https://www.linkedin.com/in/amitgupta15/
+  - title: stack-overflow
+    url: https://stackoverflow.com/users/3597607/amit-g
