@@ -2,8 +2,9 @@
 layout: post
 comments: true
 title: Unit Tests and Spring Boot
+category: services
 date:   2017-05-24
-categories: java tdd unittest springboot frameworks
+description: |
 ---
 
 I have been practicing test driven development ([TDD](https://en.wikipedia.org/wiki/Test-driven_development)) in Java for a couple

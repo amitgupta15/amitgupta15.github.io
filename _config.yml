@@ -1,4 +1,4 @@
-title: Amit's Blog
+title: Amit Gupta
 email: amitgupta15@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Sharing and learning.
@@ -17,7 +17,7 @@ gems:
 exclude:
   - Gemfile
   - Gemfile.lock
-  
+
 social:
   - title: twitter
     url: https://twitter.com/amitgupta15

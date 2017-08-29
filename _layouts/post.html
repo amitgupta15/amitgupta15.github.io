@@ -1,12 +1,14 @@
-<!DOCTYPE html>
+<DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
-{% include head.html %}
+    {% include head.html %}
 
-<body>
+<body style="margin:10px auto;width: 900px;">
+{% include header-secondary.html %}
+<br/><br/>
 <header>
     <h1>{{ page.title | escape }}</h1>
     <p>
@@ -19,17 +21,14 @@
         {% endif %}</p>
 </header>
 
-<div class="post-content" itemprop="articleBody">
+<p>
     {{ content }}
-</div>
-
+</p>
+<div>
 {% if site.disqus.shortname %}
 {% include disqus_comments.html %}
 {% endif %}
+</div>
 </body>
 </html>
 
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-
-
-</article>
