@@ -4,9 +4,183 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,700i|Orbitron:400,700|Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Amit Gupta</title>
 </head>
 <body>
-    <p>This is a test</p>
+    <header>
+        <div class="name">
+            <a href="/">Amit Gupta</a>
+        </div>
+        <nav>
+            <a href="#latest-work">Work</a>
+            <a href="mailto:amit.gupta@arrowts.com">Contact</a>
+            <a href="https://www.linkedin.com/in/amitgupta15/" target="_blank">linkedin</a>
+            <a href="https://twitter.com/amitgupta15" target="_blank">Twitter</a>
+        </nav>
+        <img class="profile-img" src="images/profile/amit-profile_01.JPG" alt="Amit's Resume">
+        <div class="profile-summary">
+            <p>Hi. I'm Amit Gupta.</p>
+            <p>
+                I'm a freelance <strong>Full Stack</strong> software developer. I specialize in tailoring software solutions that are 
+                best fit for my clients based on their business requirements and budget.
+            </p>
+            <p>I focus on <strong>NodeJS</strong> for server side development and <strong>React/Javascript</strong> for the front end development.</p>
+            <p>
+                Find out more about <a href="#latest-work">my projects</a> and <a href="mailto:amit.gupta@arrowts.com">hire me</a> 
+                for your software development needs.
+            </p>
+        </div>
+    </header>
+    <section id="latest-work">
+        <h1>Latest Work</h1>
+        <div class="project-cards-grid">
+            <div>
+                <h1>Project Dashboard
+                    <span class="project-category">web app</span>
+                </h1>
+                <h2>Socalgas</h2>
+                <div class="project-summary">
+                    <p>This application periodically queries Noosh Project management tool via REST API to retrieve the project details.
+                        The application then filters the projects for team members and shows the current status of the project in color coded column.
+                    </p>
+                </div>
+                <div class="project-technology">
+                    <ul>
+                        <li>NodeJS</li>
+                        <li>React</li>
+                        <li>Bootstrap</li>
+                        <li>Azure</li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <h1>Project Tracker
+                    <span class="project-category">Web App</span>
+                </h1>
+                <h2>SoCalGas</h2>
+                <div class="project-summary">
+                    <p>Workflow application for tracking projects</p>
+                    <ul>
+                        <li>Project workflow</li>
+                        <li>Dashboard with charts</li>
+                        <li>Download projects</li>
+                        <li>Reports</li>
+                        <li>Administration module</li>
+                        <li>Record payouts</li>
+                    </ul>
+                </div>
+                <div class="project-technology">
+                    <ul>
+                        <li>Spring Boot</li>
+                        <li>AngularJS</li>
+                        <li>Bootstrap</li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <h1>Therms Calculator 
+                    <span class="project-category">web app</span>
+                </h1>
+                <h2>socalgas</h2>
+                <div class="project-summary">
+                    Online calculator to calculate therms saving for the utility's commercial and industrial customers.
+                </div>
+                <div class="project-technology">
+                    <ul>
+                        <li>Spring Boot</li>
+                        <li>AngularJS</li>
+                        <li>Bootstrap</li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <h1>Search Application <span class="project-category">web app</span></h1>
+                <h2>socalgas</h2>
+                <div class="project-summary">
+                    <p>
+                        Knowledge base search application
+                        <ul>
+                            <li>Keyword and phrase search</li>
+                            <li>Rank topics to place them higher in the search result</li>
+                            <li>Assign keywords to topics</li>
+                            <li><a href="https://mysearch.socalgas.com/" target="_blank">Application link</a></li>
+                        </ul>
+                    </p>
+                </div>
+                <div class="project-technology">
+                    <ul>
+                        <li>Spring Boot</li>
+                        <li>AngularJS</li>
+                        <li>Bootstrap</li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <h1>Saratoga CRM Implementation <span class="project-category">Project Manager</span></h1>
+                <h2>Socalgas</h2>
+                <div class="project-summary">
+                    <p>Helped the client implement CRM solution.
+                        <ul>
+                            <li>Project plannning and execution</li>
+                            <li>Provision servers</li>
+                            <li>Coordinate with IT architects to meet the company guidelines</li>
+                            <li>Coordinate with business clients to make sure all the requirments are met</li>
+                            <li>Coordinate with the vendor to implement the solution</li>
+                        </ul>
+                    </p>
+                </div>
+                <div class="project-technology">
+                    <ul>
+                        <li>Technical Lead</li>
+                        <li>Project Planning</li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <h1>Therms Estimation Application <span class="project-category">web app</span></h1>
+                <h2>Socalgas</h2>
+                <div class="project-summary">
+                    This application replaced a bulky Excel spreadsheet that the client used to pass around and collect data. 
+                </div>
+                <div class="project-technology">
+                    <ul>
+                        <li>NodeJS</li>
+                        <li>AngularJS</li>
+                        <li>Bootstrap</li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <h1>SharePoint Online Team Site <span class="project-category">SharePoint</span></h1>
+                <h2>socalgas</h2>
+                <div class="project-summary">
+                    Migrated old SharePoint 2010 sites to SharePoint Online. Redesigned the sites to give them modern look and feel.
+                </div>
+                <div class="project-technology">
+                    <ul>
+                        <li>SharePoint Online</li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <h1>Drupal content management <span class="project-category">CMS</span></h1>
+                <h2>socal edison</h2>
+                <div class="project-summary">
+                    Helping client with content management of alternate language pages in Drupal.
+                </div>
+                <div class="project-technology">
+                    <ul>
+                        <li>Drupal</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
