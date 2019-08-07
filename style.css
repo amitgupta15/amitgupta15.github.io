@@ -155,6 +155,7 @@ section {
 .project-technology > ul li {
     display: inline;
     padding: 5px 10px;
+    margin-right: 5px;
     background: #84DCC6;
     color:#32373D;
     border-radius: 3px;

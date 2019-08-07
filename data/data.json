@@ -1,0 +1,68 @@
+{
+    "firstname": "Amit",
+    "lastname": "Gupta",
+    "projects": [
+        {
+            "name":"Project Dashboard",
+            "category": "Web App",
+            "client": "SoCalGas",
+            "summary":"This application periodically queries Noosh Project management tool via REST API to retrieve the project details. The application then filters the projects for team members and shows the current status of the project in color coded column.",
+            "technologystack": ["NodeJs","React","Bootstrap","Azure"]
+        },
+        {
+            "name":"Project Tracker",
+            "category":"Web App",
+            "client":"socalgas",
+            "summary":"Workflow application for tracking projects",
+            "summarybullets":["Project workflow","Dashboard with charts","Download projects","Reports","Administration module","Record payouts"],
+            "technologystack":["Spring Boot","AngularJS","Bootstrap"]
+        },
+        {
+            "name":"Therms Calculator",
+            "category":"web app",
+            "client":"socalgas",
+            "summary":"Online calculator to calculate therms saving for the utility's commercial and industrial customers.",
+            "technologystack":["Spring Boot","AngularJS","Bootstrap"]
+        },
+        {
+            "name":"Search Application",
+            "category":"web app",
+            "client":"socalgas",
+            "summary":"Knowledge base search application",
+            "summarybullets":["Keyword and phrase search","Rank topics to place them higher in the search result","Assign keywords to topics"],
+            "technologystack":["Spring Boot","AngularJS","Bootstrap"],
+            "link":"https://mysearch.socalgas.com"
+        },
+        {
+            "name":"CRM Implementation",
+            "category":"project manager",
+            "client":"socalgas",
+            "summary":"Helped the client implement CRM solution.",
+            "summarybullets":["Project plannning and execution", "Provision servers","Coordinate with IT architects to meet the company guidelines",
+                "Coordinate with business clients to make sure all the requirments are met",
+                "Coordinate with the vendor to implement the solution"],
+            "technologystack":["Technical lead","project planning"]
+        },
+        {
+            "name":"Therms Estimation application",
+            "category":"Web App",
+            "client":"SoCalGas",
+            "summary":"This application replaced a bulky Excel spreadsheet that the client used to pass around and collect data.",
+            "technologystack":["NodeJS","AngularJS","Bootstrap"]
+        },
+        {
+            "name":"SharePoint Online Team Site",
+            "category":"SharePoint",
+            "client":"SoCalGas",
+            "summary":"Migrated old SharePoint 2010 sites to SharePoint Online. Redesigned the sites to give them modern look and feel.",
+            "technologystack":["SharePoint Online"]
+        },
+        {
+            "name":"Drupal content management",
+            "category":"CMS",
+            "client":"socal edison",
+            "summary":"Help client with content management of alternate language pages in Drupal.",
+            "technologystack":["Drupal"]
+        }
+    ]
+}
