@@ -81,6 +81,11 @@ function populateGlobalNav() {
     work.href = '#latest-work';
     work.textContent = 'Work';
 
+    const blog = createElement('a', nav);
+    blog.title = 'Blog';
+    blog.href = '/blog';
+    blog.textContent = 'Blog';
+
     const contact = createElement('a', nav);
     contact.title = 'Contact';
     contact.textContent = 'Contact';

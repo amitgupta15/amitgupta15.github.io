@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>How to Use JSON Data with Plain Javascript and HTML</title>
+    <link rel="stylesheet" href="blog-style.css">
+</head>
+<body>
+    <header>
+        <h1>How to Use JSON Data with Plain Javascript and HTML</h1>
+        <div class="blog-date">August 8th, 2019</div>
+    </header>
+    <article>
+        <p>
+            Last month I re-designed my <a href="http://amitgupta.io">personal website</a> where I listed all the recent projects I worked on. It looked something like this.
+        </p>
+        <pre>
+&lt;div class="project-cards-grid"&gt;
+    &lt;div&gt;
+        &lt;h1&gt;Project 1&lt;/h1&gt;
+        &lt;h2&gt;Client 1&lt;/h2&gt;
+        &lt;div class="summary"&gt;Lorem ipsum&lt;/div&gt;
+        &lt;div class="technologystack"&gt;
+            &lt;ul&gt;
+                &lt;li&gt;NodeJS&lt;/li&gt;
+                &lt;li&gt;AngularJS&lt;/li&gt;
+                &lt;li&gt;Bootstrap&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;h1&gt;Project 2&lt;/h1&gt;
+        &lt;h2&gt;Client 2&lt;/h2&gt;
+        &lt;div class="summary"&gt;Lorem ipsum&lt;/div&gt;
+        &lt;div class="technologystack"&gt;
+            &lt;ul&gt;
+                &lt;li&gt;NodeJS&lt;/li&gt;
+                &lt;li&gt;AngularJS&lt;/li&gt;
+                &lt;li&gt;Bootstrap&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;h1&gt;Project 3&lt;/h1&gt;
+        &lt;h2&gt;Client 3&lt;/h2&gt;
+        &lt;div class="summary"&gt;Lorem ipsum&lt;/div&gt;
+        &lt;div class="technologystack"&gt;
+            &lt;ul&gt;
+                &lt;li&gt;NodeJS&lt;/li&gt;
+                &lt;li&gt;AngularJS&lt;/li&gt;
+                &lt;li&gt;Bootstrap&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+        </pre>
+        <p>Then I thought, wouldn't it be nice if I can store all the project details in a <a href="https://json.org" target="_blank">JSON</a> file and populate the webpage by reading from the JSON file. </p>
+        <h2>JSON File</h2>
+        <p>I created a JSON file <strong>data.json</strong> as follows:</p>
+        <pre>
+[
+    {
+        "name": "Project 1",
+        "client": "Client 1",
+        "summary": "Lorem ipsum",
+        "technologystack": ["NodeJS", "AngularJS", "Bootstrap"]
+    },
+    {
+        "name": "Project 2",
+        "client": "Client 2",
+        "summary": "Lorem ipsum",
+        "technologystack": ["NodeJS", "AngularJS", "Bootstrap"]
+    },
+    {
+        "name": "Project 3",
+        "client": "Client 4",
+        "summary": "Lorem ipsum",
+        "technologystack": ["NodeJS", "AngularJS", "Bootstrap"]
+    }
+]
+        </pre>
+        <p>Next, I needed to read this JSON file from the javascript code and populate the DOM.</p>
+        <h2>Access JSON file from Javascript</h2>
+        <p>I used <strong>XMLHttpRequest()</strong> method to load <strong>data.json</strong> in my javscript code</p>
+        <pre>
+const requestURL = 'data.json';
+const request = new XMLHttpRequest();
+request.open('GET', requestURL);
+request.responseType = 'json';
+request.send();
+request.onload = processData;
+    
+function processData() {
+    const data = request.response;
+    const projects = data.projects;
+    populateProjectsCardGrid(projects);
+}
+
+function populateProjectsCardGrid(projects) {
+    //...
+}
+        </pre>
+        <h2>Display the data in DOM</h2>
+        <p>I removed the project related static code from the HTML page. Projects section in the HTML now looked like this.</p>
+        <pre>
+&lt;div class="project-cards-grid"&gt;&lt;/div&gt;
+        </pre>
+        <p><strong>populateProjectsCardGrid()</strong> function populated the DOM with the project data.</p>
+        <pre>
+function populateProjectsCardGrid(projects) {
+    const projectCardGrid = document.querySelector('.project-cards-grid');
+
+    if (projects.length > 0) {
+        projects.forEach(project => {
+            const projectDiv = createElement('div', projectCardGrid);
+            const titleH1 = createElement('h1', projectDiv);
+            titleH1.textContent = project.name;
+            
+            const clientH2 = createElement('h2', projectDiv);
+            clientH2.textContent = project.client;
+            
+            const summaryDiv = createElement(
+                'div',
+                projectDiv,
+                'project-summary',
+            );
+            
+            const summaryPara = createElement('p', summaryDiv);
+            summaryPara.textContent = project.summary;
+            
+            if (
+                project.technologystack !== undefined &&
+                project.technologystack.length > 0
+            ) {
+                const technologyDiv = createElement(
+                    'div',
+                    projectDiv,
+                    'project-technology',
+                );
+                const technologyUL = createElement('ul', technologyDiv);
+                project.technologystack.forEach(item => {
+                    const itemLI = createElement('li', technologyUL);
+                    itemLI.textContent = item;
+                });
+            }
+        });
+    }
+}
+
+// createElement helper function
+function createElement(type, parent, classList) {
+    const element = document.createElement(type);
+    if (classList !== undefined) {
+        typeof classList === 'Array' && classList.length > 0
+            ? element.classList.add(...classList)
+            : (element.className = classList);
+    }
+    parent.append(element);
+    return element;
+}
+        </pre>
+    </article>
+</body>
+</html>
