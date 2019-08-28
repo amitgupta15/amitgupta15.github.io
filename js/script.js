@@ -114,4 +114,14 @@
         parent.append(element);
         return element;
     }
+
+    var typed = new Typed('.header h1', {
+        stringsElement: '#typed-strings',
+        typeSpeed: 100,
+        backSpeed: 40,
+        backDelay: 2000,
+        smartBackspace: true,
+        loop: true,
+        showCursor: false,
+    });
 })();

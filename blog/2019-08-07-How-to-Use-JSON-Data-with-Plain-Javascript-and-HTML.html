@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <title>How to Use JSON Data with Plain Javascript and HTML</title>
     <link rel="stylesheet" href="blog-style.css">
+    <link rel="stylesheet" href="../css/vendor/prism.css">
 </head>
 <body>
     <header>
@@ -16,8 +21,7 @@
         <p>
             Last month I re-designed my <a href="http://amitgupta.io">personal website</a> where I listed all the recent projects I worked on. It looked something like this.
         </p>
-        <pre>
-&lt;div class="project-cards-grid"&gt;
+<pre class="line-numbers"><code class="language-markup">&lt;div class="project-cards-grid"&gt;
     &lt;div&gt;
         &lt;h1&gt;Project 1&lt;/h1&gt;
         &lt;h2&gt;Client 1&lt;/h2&gt;
@@ -54,13 +58,11 @@
             &lt;/ul&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-&lt;/div&gt;
-        </pre>
-        <p>Then I thought, wouldn't it be nice if I can store all the project details in a <a href="https://json.org" target="_blank">JSON</a> file and populate the webpage by reading from the JSON file. </p>
-        <h2>JSON File</h2>
-        <p>I created a JSON file <strong>data.json</strong> as follows:</p>
-        <pre>
-[
+&lt;/div&gt;</code></pre>
+    <p>Then I thought, wouldn't it be nice if I can store all the project details in a <a href="https://json.org" target="_blank">JSON</a> file and populate the webpage by reading from the JSON file. </p>
+    <h2>JSON File</h2>
+    <p>I created a JSON file <strong>data.json</strong> as follows:</p>
+<pre class="line-numbers"><code class="language-json">[
     {
         "name": "Project 1",
         "client": "Client 1",
@@ -79,13 +81,11 @@
         "summary": "Lorem ipsum",
         "technologystack": ["NodeJS", "AngularJS", "Bootstrap"]
     }
-]
-        </pre>
-        <p>Next, I needed to read this JSON file from the javascript code and populate the DOM.</p>
-        <h2>Access JSON file from Javascript</h2>
-        <p>I used <strong>XMLHttpRequest()</strong> method to load <strong>data.json</strong> in my javscript code</p>
-        <pre>
-const requestURL = 'data.json';
+]</code> </pre>
+                        <p>Next, I needed to read this JSON file from the javascript code and populate the DOM.</p>
+                        <h2>Access JSON file from Javascript</h2>
+                        <p>I used <strong>XMLHttpRequest()</strong> method to load <strong>data.json</strong> in my javscript code</p>
+ <pre class="line-numbers"><code class="language-javascript">const requestURL = 'data.json';
 const request = new XMLHttpRequest();
 request.open('GET', requestURL);
 request.responseType = 'json';
@@ -100,16 +100,14 @@ function processData() {
 
 function populateProjectsCardGrid(projects) {
     //...
-}
-        </pre>
+}</code></pre>
         <h2>Display the data in DOM</h2>
         <p>I removed the project related static code from the HTML page. Projects section in the HTML now looked like this.</p>
         <pre>
 &lt;div class="project-cards-grid"&gt;&lt;/div&gt;
         </pre>
         <p><strong>populateProjectsCardGrid()</strong> function populated the DOM with the project data.</p>
-        <pre>
-function populateProjectsCardGrid(projects) {
+<pre class="line-numbers"><code class="language-javascript">function populateProjectsCardGrid(projects) {
     const projectCardGrid = document.querySelector('.project-cards-grid');
 
     if (projects.length > 0) {
@@ -159,8 +157,8 @@ function createElement(type, parent, classList) {
     }
     parent.append(element);
     return element;
-}
-        </pre>
+}</code></pre>
     </article>
+    <script src="../js/vendor/prism.js"></script>
 </body>
 </html>

@@ -2,28 +2,78 @@
 *::before,
 *::after {
     box-sizing: border-box;
+    margin:0;
 }
 
 body {
     font-family: sans-serif;
-    max-width: 900px;
+    font-size: calc(1rem + 0.15vw);
+}
+nav {
+    background: black;
+    margin: 0;
+    padding: 20px 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+.container {
+    max-width: 1100px;
     margin: 0 auto;
-    font-size: 1rem;
-    padding: 20px;
+    padding: 30px 20px;
 }
-
-pre {
-    font-family: monospace;
-    margin-left: 20px;
-    width: 600px;
-    background: #cccccc;
-    padding: 10px;
+header h1 {
+    text-transform: capitalize;
 }
-
 .blog-date {
-    font-size: 0.9rem;
+    font-size: calc(0.7rem + 0.3vw);
+    padding-top: 10px;
 }
 
 article {
     margin-top: 30px;
+}
+
+article h3 {
+    padding: 30px 0 5px;
+    border-bottom: 2px solid black;
+
+}
+
+article p {
+    padding: 20px 0 0;
+    line-height: 2rem;
+}
+a {
+    color: black;
+}
+
+.article-list {
+    margin:0;
+    padding:20px 20px 0;
+}
+
+.article-list li {
+    padding-bottom: 10px;
+}
+code {
+    background: #eeeeef;
+    padding: 0 10px;
+}
+blockquote {
+    padding: 20px;
+    margin-top: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: calc(1.05rem + 0.3vw);
+    border-left: 2px solid turquoise;
+    font-style: italic;
+}
+
+.blog-image {
+    width: 75%;
+    padding-top: 20px;
+    display: block;
 }

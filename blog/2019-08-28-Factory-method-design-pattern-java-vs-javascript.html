@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>Factory method Design Pattern - Java vs Javascript</title>
+    <link rel="stylesheet" href="blog-style.css">
+    <link rel="stylesheet" href="../css/vendor/prism.css">
+</head>
+<body>
+    <nav>
+        <a href="/">Amit Gupta</a>
+    </nav>
+    <div class="container">
+    <header>
+        <h1>Factory Method Design Pattern implementation in Java vs. Javascript</h1>
+        <div class="blog-date">August 28th, 2019</div>
+    </header>
+    <article>
+        <p>
+        This article demonstrates how <strong>Factory Method</strong> design pattern can be implemented
+        in Java and Javascript. 
+        </p>
+        <h3>Definition</h3>
+        <p>
+            <i><a href="https://www.amazon.com/Design-Patterns-Object-Oriented-Addison-Wesley-Professional-ebook/dp/B000SEIBB8" target="_blank" title="Design Patterns: Elements of Reusable Object-Oriented Software">Design Patterns: Elements of Reusable Object-Oriented Software</a></i> defines the <strong>Factory Method</strong> as follows:
+        </p>
+        <blockquote>
+            Define an interface for creating an object, but let sub-classes decide which class to instantiate. Factory Method lets
+            a class defer instantiation to subclasses.
+        </blockquote>
+        <h3>Structure</h3>
+        <img src="images/factory-method-class-diagram.jpg" class="blog-image" alt="Factory Method Class Diagram"/>
+        <ul class="article-list">
+            <li>
+                <strong>Product:</strong> Defines the interface of objects the factory method creates.
+            </li>
+            <li>
+                <strong>ConcreteProduct:</strong> Implements the Product interface.
+            </li>
+            <li>
+                <strong>Creator:</strong> Declares the factory method, which returns an object of type Product. 
+            </li>
+            <li>
+                <strong>ConcreteCreator:</strong> Overrides the factory method and returns an instance of ConcreteProduct.
+            </li>
+        </ul>
+        <h3>Example - A Car Dealership</h3>
+        <p>
+         Our car dealership application lets a customer order a vehicle from a car dealership. Let's assume that the dealership sells Toyota vehicles and has a well defined workflow of tasks that take place when a customer orders a 
+           new vehicle. Now the owner of the dealership has decided to open a new dealership to sell Lexus vehicles. The order processing workflow has to remain consistent between the dealerships. We also have to make
+           sure that correct choices of vehicles are presented for Toyota and Lexus brands. 
+        </p>
+
+        <img src="images/dealership-factory-class-diagram.jpg" class="blog-image" alt="Creator Class Diagram">
+        <p>
+            <code>Dealership</code> class is the <strong>Creator</strong> that declares <code>createVehicle()</code> <strong>Factory Method</strong>. <code>Dealership</code> delegates the 
+            responsibility of creating an appropriate <code>Vehicle</code> object to <code>ToyotaDealership</code> and 
+            <code>LexusDealership</code> <strong>ConcreteCreator</strong> sub-classes.
+        </p>
+        <img src="images/vehicle-class-diagram.jpg" class="blog-image" alt="Product Class Diagram">
+        <p>
+            <code>Vehicle</code> is the <strong>Product</strong> interface (an abstract class in our case). <code>Corolla</code>, <code>Camry</code>, <code>Highlander</code>,
+            <code>ES</code>, <code>IS</code>, and <code>RX</code> are <strong>ConrcreteProduct</strong> classes that implement the <code>Vehicle</code> interface.
+        </p>
+        <h3>Java</h3>
+        <p><strong>Dealership.java</strong></p>
+        <pre class="line-numbers"><code class="language-java">abstract public class Dealership {
+    public void orderVehicle(String type) {
+        Vehicle vehicle = createVehicle(type);
+        System.out.println("Ordering Vehicle..." + vehicle.getType());
+        vehicle.prepareVehicle();
+        vehicle.performPaperwork();
+        vehicle.acceptPayment();
+        vehicle.deliver();
+    }
+
+    abstract public Vehicle createVehicle(String type);
+} </code></pre>
+<p>
+    <code>Dealership</code> class declares the abstract <code>createVehicle()</code> method.
+    <code>orderVehicle()</code> method defines the order processing workflow. It uses <code>createVehicle()</code> method to get a <code>Vehicle</code> object.
+</p>
+<p>
+    As shown below, <code>ToyotaDealership</code> and <code>LexusDealership</code> classes override the <code>createVehicle()</code> method to instantiate and return an appropriate 
+    <code>Vehicle</code> object based on the type of vehicle requested.
+</p>
+<p><strong>ToyotaDealership.java</strong></p>
+<pre class="line-numbers"><code class="language-java">public class ToyotaDealership extends Dealership {
+    public Vehicle createVehicle(String type) {
+        switch(type.toLowerCase()) {
+            case "corolla": return new Corolla();
+            case "camry": return new Camry();
+            case "highlander": return new Highlander();
+            default: {
+                System.out.println("No Such Model available");
+                System.exit(0);
+                return null;
+            }
+        }
+    }
+}</code></pre>
+<p><strong>LexusDealership.java</strong></p>
+<pre class="line-numbers"><code class="language-java">public class LexusDealership extends Dealership {
+    public Vehicle createVehicle(String type) {
+        switch(type.toLowerCase()) {
+            case "es": return new ES();
+            case "is": return new IS();
+            case "rx": return new RX();
+            default: {
+                System.out.println("No Such Model available");
+                System.exit(0);
+                return null;
+            }
+        }
+    }
+}</code></pre>
+<p>As shown below, <code>Vehicle</code> is an abstract class. It defines various operations that are performed on a vehicle at the time or ordering.</p>
+<p><strong>Vehicle.java</strong></p>
+<pre class="line-numbers"><code class="language-java">abstract class Vehicle {
+    String type;
+
+    public String getType() {
+        return type;
+    }
+
+    public void prepareVehicle() {
+        System.out.println("Preparing Vehicle..." + type);
+        System.out.println("Perform Inspection...");
+        System.out.println("Wash the vehicle...");
+        System.out.println("Top up the fuel...");
+        System.out.println("Install any accessories - all weather mats, trunk mats, paint protection, etc.");
+    }
+
+    public void performPaperwork() {
+        System.out.println("Perform Paperwork for..." + type);
+        System.out.println("Prepare Invoice...");
+    }
+
+    public void acceptPayment() {
+        System.out.println("Accept payment...");
+    }
+
+    public void deliver() {
+        System.out.println("Congratulations! Your " + type + " is ready for you!");
+    }
+}</code></pre>
+<p>Following are the concrete sub-classes that extend the <code>Vehicle</code> class. </p>
+<pre class="line-numbers"><code class="language-java">class Corolla extends Vehicle {
+    public Corolla() {
+        type = "corolla";
+    }
+}
+
+class Camry extends Vehicle {
+    public Camry() {
+        type = "camry";
+    }
+}
+
+class Highlander extends Vehicle {
+    public Highlander() {
+        type = "highlander";
+    }
+}
+
+class ES extends Vehicle {
+    ES() {
+        type = "ES";
+    }
+}
+
+class IS extends Vehicle {
+    IS() {
+        type = "IS";
+    }
+}
+
+class RX extends Vehicle {
+    RX() {
+        type = "RX";
+    }
+}</code></pre>
+<p>
+    <strong>Application.java</strong> contains the <code>main()</code> method
+</p>
+<pre class="line-numbers"><code class="lang-java">public class Application {
+    public static void main(String[] args) {
+        Dealership dealership = new ToyotaDealership();
+        dealership.orderVehicle("camry");
+    }
+}</code></pre>
+<p>In the code above, we are creating an instance of <code>ToyotaDealership</code> class and placing an order for Camry. The output looks like this:</p>
+<pre><code class="language-">amit$ java Application
+ 
+ Ordering Vehicle...camry
+ Preparing Vehicle...camry
+ Perform Inspection...
+ Wash the vehicle...
+ Top up the fuel...
+ Install any accessories - all weather mats, trunk mats, paint protection, etc.
+ Perform Paperwork for...camry
+ Prepare Invoice...
+ Accept payment...
+ Congratulations! Your camry is ready for you!</code></pre>
+ <h3>Javascript</h3>
+ <p>Now let us see how <strong>Factory Method</strong> design pattern can be implemented in Javascript.</p>
+ <p>To keep the implementation simple, I have stayed away from the newer javascript syntax and built-in functions available in ES5 and above.</p>
+<p>
+    The following code defines the <code>Dealership</code> function constructor. <code>createVehicle</code> argument is a function that gets passed to <code>Dealership</code>. <code>orderVehicle()</code> method is defined on <code>Dealership</code>'s prototype.
+</p>
+ <pre class="line-numbers"><code class="lang-javascript">function Dealership(createVehicle) {
+    this.createVehicle = createVehicle;
+}
+Dealership.prototype.orderVehicle = function(type) {
+    var vehicle = this.createVehicle(type);
+    if (vehicle === null) {
+        console.error('No such vehicle available - ' + type);
+        return;
+    }
+    console.log('Ordering ' + vehicle.getType());
+    vehicle.prepareVehicle();
+    vehicle.performPaperwork();
+    vehicle.acceptPayment();
+    vehicle.deliver();
+};</code></pre>
+<p>The following code defines the <code>Vehicle</code> function constructor and prototype methods.</p>
+<pre class="line-numbers"><code class="lang-javascript">function Vehicle(type) {
+    this.type = type;
+}
+
+Vehicle.prototype = {
+    getType: function() {
+        return this.type;
+    },
+    prepareVehicle: function() {
+        console.log('Preparing ' + this.type);
+    },
+    performPaperwork: function() {
+        console.log('Performing Paperwork for ' + this.type);
+    },
+    acceptPayment: function() {
+        console.log('Accepting payment for ' + this.type);
+    },
+    deliver: function() {
+        console.log('Congratulations! Your ' + this.type + ' is ready!');
+    },
+};</code></pre>
+<p>
+    The following code creates <code>toyotaDealership</code> and <code>lexusDealership</code> objects of type <code>Dealership</code>. 
+</p>
+<pre class="line-numbers"><code class="lang-javascript">var toyotaDealership = new Dealership(function(type) {
+    if (type.toLowerCase() === 'corolla') {
+        return new Vehicle('Corolla');
+    } else if (type.toLowerCase() === 'camry') {
+        return new Vehicle('Camry');
+    } else if (type.toLowerCase() === 'highlander') {
+        return new Vehicle('Highlander');
+    } else {
+        return null;
+    }
+});
+
+var lexusDealership = new Dealership(function(type) {
+    if (type.toLowerCase() === 'es') {
+        return new Vehicle('ES');
+    } else if (type.toLowerCase() === 'is') {
+        return new Vehicle('IS');
+    } else if (type.toLowerCase() === 'rx') {
+        return new Vehicle('RX');
+    } else {
+        return null;
+    }
+});</code></pre>
+<p>Now we can order a vehicle by calling <code>orderVehicle()</code> method on <code>toyotaDealership</code> and <code>lexusDealership</code> objects.</p>
+<pre class="line-numbers"><code class="lang-javascript">toyotaDealership.orderVehicle('camry');
+ console.log('');
+ lexusDealership.orderVehicle('es');</code></pre>
+ <p>Here's the output</p>
+ <img src="images/javascript-output-screenshot.png" class="blog-image" alt="Javascript Output"/>
+ <h3>Summary</h3>
+ <p><strong>Factory Method</strong> encapsulates object creation by letting the sub-classes decide what objects to create. In the above example, <code>Dealership</code>
+    defines the process of ordering a vehicle but has no knowledge of the type of vehicle being ordered. The responsibility of creating a vehicle is delegated to the sub-classes.
+</p>
+<h3>Source Code</h3>
+<p><a href="https://github.com/amitgupta15/blog/tree/master/design-patterns/factory-method" target="_blank">Download</a></p>
+</article>
+</div>
+<script src="../js/vendor/prism.js"></script>
+</body>
+</html>
