@@ -1,15 +1,13 @@
-/*
-#C2E812 Bitter Lemon
-#E8E9F3 Glitter
-#CECECE Pastel Gray
-#32373D Onyx
-#050506 Rich Black
-#84DCC6 Pearl Aqua
-*/
-
-/* Default styles */
+/* 
+#C9DAEA COLUMBIA BLUE
+#03F7EB TURQUOISE BLUE
+#00B295 PERSIAN GREEN
+#191516 LICORICE
+#AB2346 FRENCH WINE
+ */
 html {
     box-sizing: border-box;
+    font-size: 1rem;
 }
 
 *, *:before, *:after {
@@ -20,164 +18,212 @@ html {
     margin: 0;
 }
 
-h1, h2 {
+h1, h2, h3, h4, h5 {
     font-weight: 400;
 }
 
 body {
     font-family: 'Montserrat', sans-serif;
-    line-height: 1.65;
-    font-size: calc(1rem + 0.2vw);
-    margin:0 auto;
     position: relative;
 }
 
-.header {
-    height: 100vh;
-    background: linear-gradient(rgba(100,100,100,0), rgba(100,100,100,0)), url('images/profile/amit-profile-02.jpg') no-repeat fixed;
-    background-size:cover;
+/* header section */
+header {
+    background: #191516;
 }
 
-.intro {
-    color: white;
-    margin: 0 auto;
-    padding: 45vh 50px;
+.header-container {
+    position: relative;
 }
 
-.intro h1 {
-    margin: 0;
-    font-size: calc(1rem + 1.1vw);
-    font-weight: 700;
+.profile-img {
+    width: 100%;
+}
+
+.profile-summary {
+    text-align: left;
+    position: absolute;
+    bottom: 0;
+    padding: 40px 10px;
+    background: #191516;
+    left: 0;
+    right: 0;
+}
+
+.profile-summary > h1 {
+    font-size: calc(1rem + 1vw);
     text-transform: uppercase;
+    color: #03F7EB;
 }
 
-.intro h1::before {
+.profile-summary h1::before {
     content: "I'M "
 }
-.intro h1::after {
+.profile-summary h1::after {
     content: "|"
     
 }
 
-.intro h3 {
-    font-weight: 400;
-    font-size: calc(1rem + 0.9vw);
-    margin:0;
+.profile-summary > h3 {
+    margin-top: 20px;
     font-family: 'Courier New', Courier, monospace;
-}
-
-.content-wrap {
-    max-width: 1210px;
-    margin: 0 auto;
-    position: relative;
-    padding: 20px;
+    font-size: calc(1rem + 0.5vw);
+    color: #00B295;
 }
 
 nav {
-    grid-column: 6/12;
-    grid-row: 1;
-    padding-top: 10px;
-    justify-self: right;
+    padding: 20px;
+    text-align: right;
 }
 
 nav a {
-    padding: 20px;
+    padding: 10px;
+    font-size: 0.9rem;
     text-decoration: none;
-    text-transform: uppercase;
-    color: yellow;
-    font-weight: 600;
-    font-size: calc(0.8rem + 0.3vw);
+    color: #c9daea;
+    transition: all ease-out 1s;
 }
 
-/* Section */
+nav a:hover, a:active, a:focus {
+    color: #03F7EB;
+}
+
+.linkedin-btn {
+    height: 15px;
+}
+
 section {
-    padding: 10px 30px;
-    background: #CECECE;
+    margin: 10px;
 }
 
-/* Project Grid */
-.project-cards-grid {
-    margin-top: 20px;
-}
-
-.project-cards-grid > div {
-    background: #32373D;
-    border: 1px solid #84DCC6;
-    padding: 20px;
-    height: 500px;
-    color: #E8E9F3;
-    font-family: 'Montserrat', sans-serif;
-    position: relative;
-}
-
-.project-cards-grid h1 {
-    border-bottom: 1px solid #84DCC6;
-    padding-bottom: 10px;
-    font-size: calc(1.5rem + 0.2vw);
-    text-transform: capitalize;
-}
-
-.project-cards-grid a {
-    color: #C2E812;
-}
-.project-cards-grid h2 {
-    padding-top: 5px;
-    font-size: calc(1.1rem + 0.2vw);
+section > h1 {
+    font-size: calc(1rem + 0.6vw);
     text-transform: uppercase;
+    color: #191516;
+    padding-bottom: 10px;
+}
+.container {
+    margin: 10px; 
+    padding: 20px;
+    border-top: 1px solid #03F7EB;
+    min-height: 250px;
 }
 
-.project-summary {
-    padding-top: 10px;
-}
-
-.project-technology {
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
-}
-
-.project-technology > ul li {
-    display: inline;
-    padding: 5px 10px;
-    margin-right: 5px;
-    background: #84DCC6;
-    color:#32373D;
-    border-radius: 3px;
-    font-size: calc(0.7rem + 0.2vw);
+.work-container h1::before {
+    display: block;
+    content: " ";
+    width: 30px;
+    margin: .5rem 0;
+    border-top : 3px solid #00b295;
 
 }
-
-.project-category {
-    position: absolute;
-    top: 30px;
-    right: 20px;
-    padding: 5px 10px;
-    background: #E8E9F3;
-    color:#32373D;
-    border-radius: 3px;
-    font-size: calc(0.5rem + 0.2vw);
+.work-container h1 {
+    color: #00b295;
+    font-size: 1.5rem;
     text-transform: capitalize;
-
-}
-.project-cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    grid-gap: 15px;
-    justify-content: center;
 }
 
-@media (min-width: 900px) {
-    .header {
+.work-container h3 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #ab2346;
+}
+
+.work-desc {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    max-width: 800px;
+    color: #191516;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.work-tech {
+    margin-bottom: 20px;
+}
+.work-tech > span {
+    color:#00b295;
+    text-decoration: underline;
+}
+
+.work-img {
+    width: 200px;
+    border: 1px solid #c9daea;
+    padding: 5px;
+}
+
+.blog-entry {
+    margin: 10px 0;
+    padding: 10px 0;
+}
+
+.blog-entry a {
+    color: #00B295;
+}
+
+.blog-entry .date {
+    margin-left: 15px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+@media(min-width:550px) {
+    header {
+        min-height: 100vh;
+    }
+    
+    .header-container {
+        padding-top: 10vh;
         display: grid;
-        grid-template-columns: repeat(12,1fr);
-        grid-template-rows: repeat(16, 1fr);
+        grid-template-columns: repeat(12, 1fr);
+        align-items: center;
     }
-    .intro {
-        grid-column-start: 4;
-        grid-column-end: 13;
-        grid-row-start: 6;
-        grid-row-end: 12; 
-        padding: 30px;
-       
+    
+    .profile-img {
+        grid-column: 1 / 4;
+        grid-row: 1;
     }
-} 
+    
+    .profile-summary {
+        position: relative;
+        grid-column: 7 / 12;
+        grid-row: 1;
+        text-align: left;
+    }
+
+    .work-container {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    .work-heading {
+        align-self: center;
+        grid-column: 1 / 3;
+    }
+    
+    .work-img {
+        align-self: center;
+        grid-column: 8 / -1;
+    }
+
+    .work-desc {
+        align-self: center;
+        grid-column: 3 / 8;
+        border-left: 1px solid #00b295;
+        padding-left: 10px;
+    }
+
+    .work-tech > span {
+        padding: 5px 10px;
+        background: #00b295;
+        color:white;
+        border-radius: 3px;
+        text-decoration: none;
+    }
+    
+    .blog-entry a {
+        font-size: 1.2rem;
+    }
+    
+    .blog-entry .date {
+        font-size: 1.1rem;
+    }
+}

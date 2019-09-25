@@ -10,7 +10,6 @@
 
         gtag('config', 'UA-147161510-1');
     </script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -23,23 +22,165 @@
     <title>Amit Gupta</title>
 </head>
 <body>
-    <div class="header">
-        <nav></nav>
-        <div class="intro">
-            <h1 class="typed"></h1>
-            <div id="typed-strings">
-                <p>Amit Gupta</p>
-                <p>a full stack developer</p>
-                <p>a freelancer</p>
+    <header>
+        <nav>
+            <a href="#blog">Blog</a>
+            <a href="#work">Work</a>
+            <a href="https://www.linkedin.com/in/amitgupta15/" target="_blank"><img class="linkedin-btn" src="images/LI-Logo.png" alt="" srcset=""></a>
+            <a href="https://twitter.com/amitgupta15?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="small" data-show-screen-name="false" data-show-count="false">Follow @amitgupta15</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </nav>
+        <div class="header-container">
+            <img src="images/profile/amit-profile-00_003.JPG" class="profile-img" alt="" srcset="">
+            <div class="profile-summary">
+                <h1 class="typed"></h1>
+                <div id="typed-strings">
+                    <p>Amit Gupta</p>
+                    <p>a full stack developer</p>
+                    <p>a freelancer</p>
+                </div>
+                <h3>Javascript, NodeJS, React, Java</h3>
             </div>
-            <h3>Javascript, React, NodeJS, Java</h3>
         </div>
-    </div>
-    <section id="latest-work">
-        <h1>Latest Work</h1>
-        <div class="project-cards-grid"></div>
+    </header>
+    <section id="blog">
+        <h1>Blog</h1>
+        <div class="container">
+            <div class="blog-entry">
+                <a href="blog/2019-08-28-Factory-method-design-pattern-java-vs-javascript.html">Factory Method Design Pattern implementation in Java vs. Javascript</a><span class="date">August 28th, 2019</span>
+            </div>
+            <div class="blog-entry">
+                <a href="blog/2019-08-07-How-to-Use-JSON-Data-with-Plain-Javascript-and-HTML.html">How to Use JSON Data with Plain Javascript and HTML</a><span class="date">August 8th, 2019</span>
+            </div>
+        </div>
+    </section>
+    <section id="work">
+        <h1>Work</h1>
+        <div class="container work-container">
+            <div class="work-heading">
+                <h1>Project Dashboard</h1>
+                <h3>SoCalGas</h3>
+            </div>
+            <div class="work-desc">
+                <div class="work-tech">
+                    <span>NodeJS</span> <span>React</span> <span>Bootstrap</span> <span>Azure</span>
+                </div>
+                <p>This application periodically queries Noosh Project management tool via REST API to retrieve the project details. The application then filters the projects for team members and shows the current status of the project in color coded column.</p>
+            </div>
+        </div>
+        <div class="container work-container">
+            <div class="work-heading">
+                <h1>Project Tracker</h1>
+                <h3>SoCalGas</h3>
+            </div>
+            <div class="work-desc">
+                <div class="work-tech">
+                    <span>Spring Boot</span> <span>AngularJS</span> <span>Bootstrap</span>
+                </div>
+                <p>Workflow application for tracking projects
+                    <ul>
+                        <li>Project workflow</li>
+                        <li>Dashboard with charts</li>
+                        <li>Download projects</li>
+                        <li>Reports</li>
+                        <li>Administration module</li>
+                        <li>Record payouts</li>
+                    </ul>
+                </p>
+            </div>
+            <a href="images/projects/project-tracker-2.png"><img src="images/projects/project-tracker-2.png" class="work-img" alt="Project Dashboard"></a>
+        </div>
+        <div class="container work-container">
+            <div class="work-heading">
+                <h1>Combined Heat & Power (CHP) Calculator</h1>
+                <h3>SoCalGas</h3>
+            </div>
+            <div class="work-desc">
+                <div class="work-tech">
+                    <span>Spring Boot</span> <span>AngularJS</span> <span>Bootstrap</span>
+                </div>
+                <p>Online calculator to calculate therms saving for the utility's commercial and industrial customers.</p>
+            </div>
+            <a href="images/projects/combined-heat-and-power-calculator.png"><img src="images/projects/combined-heat-and-power-calculator.png" class="work-img" alt="Project Dashboard"></a>
+        </div>
+        <div class="container work-container">
+            <div class="work-heading">
+                <h1>Search Application (MySearch)</h1>
+                <h3>SoCalGas</h3>
+            </div>
+            <div class="work-desc">
+                <div class="work-tech">
+                    <span>Spring Boot</span> <span>AngularJS</span> <span>Bootstrap</span>
+                </div>
+                <p>Knowledge base search application. 
+                    <ul>
+                        <li>Keyword and phrase search</li>
+                        <li>Rank topics to place them higher in the search result</li>
+                        <li>Assign keywords to topics</li>
+                    </ul>
+                    <a href="http://mysearch.socalgas.com" target="_blank">https://mysearch.socalgas.com</a>
+                </p>
+            </div>
+            <a href="images/projects/mysearch.png"><img src="images/projects/mysearch.png" class="work-img" alt="My Search"></a>
+        </div>
+        <div class="container work-container">
+            <div class="work-heading">
+                <h1>Saratoga CRM Implementation</h1>
+                <h3>SoCalGas</h3>
+            </div>
+            <div class="work-desc">
+                <div class="work-tech">
+                    <span>Project Management</span> <span>Tech Lead</span> <span>Project Planning</span>
+                </div>
+                <p>Led the implementation of Saratoga CRM system at SoCalGas.
+                    <ul>
+                        <li>Project plannning and execution</li>
+                        <li>Provision servers</li>
+                        <li>Coordinate with IT architects to meet the company guidelines</li>
+                        <li>Coordinate with business clients to make sure all the requirments are met</li>
+                        <li>Coordinate with the vendor to implement the solution</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+        <div class="container work-container">
+            <div class="work-heading">
+                <h1>Application to estimate energy usage</h1>
+                <h3>SoCalGas</h3>
+            </div>
+            <div class="work-desc">
+                <div class="work-tech">
+                    <span>NodeJS</span> <span>AngularJS</span> <span>Bootstrap</span>
+                </div>
+                <p>This application replaced a bulky Excel spreadsheet that the client used to pass around and collect data.
+                </p>
+            </div>
+        </div>
+        <div class="container work-container">
+            <div class="work-heading">
+                <h1>SharePoint Online</h1>
+                <h3>SoCalGas</h3>
+            </div>
+            <div class="work-desc">
+                <div class="work-tech">
+                    <span>SharePoint Online</span>
+                </div>
+                <p>Migrated old SharePoint 2010 sites to SharePoint Online. Redesigned the sites to give them modern look and feel.</p>
+            </div>
+        </div>
+        <div class="container work-container">
+            <div class="work-heading">
+                <h1>Drupal Content Management</h1>
+                <h3>SoCal Edison</h3>
+            </div>
+            <div class="work-desc">
+                <div class="work-tech">
+                    <span>Drupal</span>
+                </div>
+                <p>Help client with content management of alternate language pages in Drupal.</p>
+            </div>
+        </div>
     </section>
     <script src="js/vendor/typed.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/script2.js"></script>
 </body>
 </html>
