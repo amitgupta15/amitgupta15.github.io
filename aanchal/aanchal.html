@@ -1,0 +1,117 @@
+<html> 
+    <head> 
+        <title> Aanchals Page </title>
+        <style>
+            body {
+                background:honeydew;
+            }
+            h1 {
+                color: pink;
+            }
+            p{
+                color:  blueviolet;
+                background : white;
+                padding: 10px;
+                width: 45%;
+            }
+            img {
+                border-radius: 50%;
+
+            }
+            .square{
+                background: blueviolet;
+                padding: 50px;
+                width:100px;
+                height:100px;
+                border-radius:50%;
+
+        
+            }
+        </style>
+    </head> 
+
+
+    <body>  
+        <input type="text" id="field1">
+        <input type="text" id="field2">
+        <button onclick="Sum()">Add</button>
+        <button onclick="Difference()">Subtract</button>
+        <button onclick="Multiply()">Multiply</button>
+        <button onclick="Divide()">Divide</button>
+
+        <h1> Hello there, Im Aanchal </h1>
+        <img src="PHOTO-2020-01-22-14-53-20.jpg"  height="50%"/>
+        
+            <p>I'm a highschool freshman and  sister of a girl named <br/> 
+                Aayushi and a daughter to Chirag and Neha Vaidya. <br/> 
+                I am 14 years old. </p>
+            
+        
+        <h2> Hobbies</h2>
+        <ul> 
+            <li> Tennis</li>
+            <li> Swimming</li>
+            <li> Reading</li>
+            <li> Playing Video Games with my Dad </li>
+        </ul>
+           
+         <p class="square"></p>       
+            
+     <h2>Family</h2>
+     <ul>
+         <li><a href = "chirag.html">Dad</a></li>
+       <li><a href = "aayushi.html">Aayushi</a></li> 
+       <li><a href = "neha.html">Mom</a> </li>
+    </ul>
+     
+    </body>
+    <script>
+        
+        function Sum(){
+            var x = document.getElementById("field1").value;
+            var y = document.getElementById("field2").value;
+            var num1 = parseFloat(x);
+            var num2 = parseFloat(y);
+            var z = num1+num2
+            
+            alert(z);
+
+    
+        }
+    function Difference(){
+
+       var x = document.getElementById("field1").value;
+       var y = document.getElementById("field2").value;
+       var num1 = parseFloat(x);
+       var num2 = parseFloat(y);
+       var z = num1-num2;
+        alert(z);
+    }
+
+
+    function Multiply(){
+
+        var x = document.getElementById("field1").value;
+       var y = document.getElementById("field2").value;
+       var num1 = parseFloat(x);
+       var num2 = parseFloat(y);
+       var z = num1*num2
+
+       alert(z);
+    }
+
+
+    function Divide(){
+
+        var x = document.getElementById("field1").value;
+       var y = document.getElementById("field2").value;
+       var num1 = parseFloat(x);
+       var num2 = parseFloat(y);
+       var z = num1/num2
+       alert(z);
+    }
+
+    
+    </script>
+
+</html>

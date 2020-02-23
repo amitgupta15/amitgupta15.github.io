@@ -1,0 +1,34 @@
+<html>
+    <head></head>
+    <style>
+        p {
+            width:100px;
+            height:100px;
+            background:pink;
+            margin-left:200px;
+            margin-top:220px;
+        }
+    </style>
+     <body>
+         
+        <p id="square"></p>
+    </body>
+    <script>
+        var mysquare = document.getElementById("square");
+        mysquare.addEventListener("click", changeColor);
+        function changeColor() {
+       if(mysquare.style.backgroundColor === "pink") {
+           mysquare.style.backgroundColor = "black";
+       } else {
+         mysquare.style.backgroundColor = "pink";
+       }
+        }
+        document.addEventListener("click", moveSquare);
+        function moveSquare(event) {
+            console.log(event.clientX, event.clientY);
+            mysquare.style.marginLeft= event.clientX;
+            mysquare.style.marginTop= event.clientY;
+        
+        }
+    </script>
+</html>

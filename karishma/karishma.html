@@ -1,0 +1,92 @@
+<html>
+<head>
+   <title> My Page</title>
+   <style>
+       body {
+           background:honeydew;
+       }
+       h1 {
+           color: rgb(255, 0, 157);
+       }
+       p {
+           color: white ;
+           background: rgb(255, 0, 128);
+           padding:10px;
+           width:200px;
+           height:200px;
+           border-radius:10px
+       }
+       img {
+           border-radius:10px;
+       }
+       .square {
+           background:rgb(255, 0, 128);
+           padding:50px;
+           width:100px;
+           height:100px;
+           border-radius:50%;
+
+       }
+       
+
+   </style>
+</head>
+<body>
+<input type="text" id="feild1">
+<input type="text" id="feild2">
+<button onclick="sum()">sum</button>
+<button onclick="difference()">difference</button>
+<button onclick="product()">product</button>
+<button onclick="quotient()">quotient</button>
+
+<h1>KARISHMA GUPTA</h1>
+    <p>Hi, my name is Karishma Gupta.<br/>I'm going to just tell you a little bit about my self. 
+         I am 12 years<br/> old, almost 13.  I am a sister of one younger sister, Ayana</p>
+    <img src="2020_Sonia_4-Ooh_20200118_096.JPG" height="30%"/>
+    <h2>Hobbies</h2>
+     <ul>
+          <li>Gymnastics</li>
+          <li>Dance</li>
+          <li>Hanging out with friends</li>
+          
+        </ul>
+        <p class="square"></p>
+        <a href="amit.html">Amit</a>
+    
+</body>
+<script>
+    function sum() {
+        var x = document.getElementById("feild1").value;
+        var y = document.getElementById("feild2").value;
+        var num1 = parseFloat(x);
+        var num2 = parseFloat (y);
+        var z = num1 + num2; 
+        alert(z);
+    }
+
+    function difference() {
+        var x = document.getElementById ("feild1").value;
+        var y = document.getElementById("feild2").value;
+        var num1 = parseFloat (x);
+        var num2 = parseFloat (y);
+        var z = num1 - num2;
+        alert(z);
+    }
+    function product() {
+        var x = document.getElementById("feild1").value;
+        var y = document.getElementById("feild2").value;
+        var num1 = parseFloat (x);
+        var num2 = parseFloat (y);
+        var z = num1 * num2;
+        alert(z);
+    }
+       function quotient() {
+        var x = document.getElementById ("feild1").value;
+        var y = document.getElementById("feild2").value;
+        var num1 = parseFloat (x);
+        var num2 = parseFloat (y);
+        var z = num1 / num2;
+        alert(z);
+     }
+</script>
+</html>
