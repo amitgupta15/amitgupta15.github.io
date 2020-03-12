@@ -1,0 +1,120 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin:0;
+  position: relative;
+  background-color: black;
+}
+
+*, *::before, *::after{
+  box-sizing: inherit;
+}
+
+video {
+  margin:0;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left:0;
+  z-index: 10;
+}
+
+.header h1{
+  position: relative;
+  color: white;
+  z-index: 20;
+  visibility: hidden;
+}
+
+.grid {
+  position: relative;
+  width: 100%;
+  max-width: 1700px;
+  margin:25vh auto;
+  display: grid;
+  grid-template-columns: repeat(12, [col] 1fr);
+  z-index: 30;
+}
+.grid > div {
+  /* border: 1px solid white; */
+  color:white;
+}
+
+.globe {
+  grid-column: col 1 / span 12;
+  grid-row: 1 / span 2;
+  justify-self: center;
+  align-self: center;
+}
+
+.rng-btn {
+  grid-column: col 1 / span 5;
+  grid-row: 1;
+  justify-self: end;
+  align-self: end;
+  margin-right: 30px;
+}
+
+.solar-btn {
+  grid-column: col 1 / span 5;
+  grid-row: 2;
+  justify-self: end;
+  align-self: start;
+  margin-right: 30px;
+}
+
+.hydrogen-btn {
+  grid-column: col 8 / span 4;
+  grid-row: 1;
+  justify-self: start;
+  align-self: end;
+}
+
+.wind-btn {
+  grid-column: col 8 / span 4;
+  grid-row: 2;
+  justify-self: start;
+  align-self: start;
+}
+.tips-btn {
+  grid-column: col / span 3;
+  grid-row: 3;
+  font-size: 24px;
+  justify-self: right;
+  align-self: center;
+  margin-right: 50px;
+}
+
+.news-btn {
+  grid-column: col 9 / span 3;
+  grid-row: 3;
+  font-size: 24px;
+  justify-self: center;
+  align-self: center;
+}
+
+.header-button {
+  width: 300px;
+}
+
+.globe-img {
+  width: 600px;
+}
+
+.hide {
+  visibility: hidden;
+  opacity: 0;
+}
+.show {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 5s ease-in, opacity 5s ease-in;
+}
+/* a {
+  display: inline-block;
+}
+a:hover, a:active {
+  background-color:rgba(0, 225, 255, 0.3);
+} */
