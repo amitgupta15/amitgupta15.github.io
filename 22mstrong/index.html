@@ -3,32 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>22 Million Strong</title>
+  <title>The Future of Energy is Here</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <video autoplay muted playsinline loop>
-    <source src="assets/Videos/Background Video/SoCal_Wires_Placeholder73.mp4" type="video/mp4">
-  </video>  
-  <!-- <div class="header">
-    <h1>Future is here</h1>
-  </div> -->
-  <div class="grid">
-    <div class="globe"><img src="assets/Globe_Dark.gif" class="globe-img" alt="" srcset=""></div>
-    <div class="rng-btn"><a href="#"><img src="assets/RNG_home_button.png" class="header-button" alt="" srcset=""></a></div>
-    <div class="hydrogen-btn"><a href="#"><img src="assets/HYDROGEN_home_button.png" class="header-button" alt="" srcset=""></a></div>
-    <div class="solar-btn"><a href="#"><img src="assets/SOLAR_home_button.png" class="header-button" alt="" srcset=""></a></div>
-    <div class="wind-btn"><a href="#"><img src="assets/WIND_home_button.png" class="header-button" alt="" srcset=""></a></div>
-    <div class="tips-btn">Tips</div>
-    <div class="news-btn">News</div>
+  <video class="intro-video show-video" autoplay muted playsinline>
+    <source src="videos/SCG_Intro_Video_1920_converted.mp4" type="video/mp4">
+  </video> 
+  <video class="loop-video hide-video" muted playsinline loop>
+    <source src="videos/SCG_Loop_Video_1920_converted.mp4" type="video/mp4">
+  </video> 
+  <div class="homepage-title">
+    <div class="title-block">
+      <p>THE FUTURE OF RENEWABLE</p>
+      <p class="big-font-title">ENERGY IS HERE</p>
+    </div>
   </div>
+  <ul class="header-button-grid">
+    <li class="grid-item-glb"><img src="images/globe.png" alt="Globe Image"></li>
+    <li class="grid-item-rng"><a href="#"><img src="images/RNG_home_button.png" alt="RNG Home Button"></a></li>
+    <li class="grid-item-slr"><a href="#"><img src="images/SOLAR_home_button.png" alt="Solar Home Button"></a></li>
+    <li class="grid-item-hyd"><a href="#"><img src="images/HYDROGEN_home_button.png" alt="Hydrogen Home Button"></a></li>
+    <li class="grid-item-wnd"><a href="#"><img src="images/WIND_home_button.png" alt="Wind Home Button"></a></li>
+    <li class="grid-item-tip"><a href="#">Tips</a></li>
+    <li class="grid-item-nwz"><a href="#">News</a></li>
+  </ul>
+  <script>
+    var titleBlock = document.querySelector('.title-block');
+    var grid = document.querySelector('.header-button-grid');
+    var introVideo = document.querySelector('.intro-video');
+    var loopVideo = document.querySelector('.loop-video');
+
+    //Hide the buttons at the beginning. 
+    grid.classList.add('invisible');
+
+    // Make the title visible after 25 seconds
+    setTimeout(function(){
+      titleBlock.classList.add('title-block-animate');
+    }, 24000);
+
+    // Make the buttons visible after 26 seconds
+    setTimeout(function(){
+      grid.classList.add('visible');
+      grid.classList.remove('invisible');
+    }, 26000);
+
+    // Hide the intro video and show the loop video after 57 seconds
+    setTimeout(function(){
+      introVideo.classList.add('hide-video');
+      introVideo.classList.remove('show-video');
+    
+      loopVideo.classList.add('show-video');
+      loopVideo.play();
+      loopVideo.classList.remove('hide-video');
+
+    }, 57000);
+   
+  </script> 
 </body>
-<script>
-  var grid = document.querySelector('.grid');
-  grid.classList.add('hide');
-  setTimeout(function(){
-    grid.classList.add('show');
-    grid.classList.remove('hide');
-  }, 25000);
-</script>
 </html>
