@@ -10,14 +10,14 @@
 <body>
   <div class="header">
     <a href="/index.html">Navigation</a>
-    <p><strong>#22MILLION</strong>STRONG</p>
+    <p id="output"><strong>#22MILLION</strong>STRONG</p>
   </div>
   <div>
     <video class="intro-video show-video" autoplay muted playsinline>
-      <source src="videos/SCG_Intro_Video_1920_converted.mp4" type="video/mp4">
+      <!-- <source src="videos/SCG_Intro_Video_1920_converted.mp4" type="video/mp4"> -->
     </video> 
     <video class="loop-video hide-video" muted playsinline loop>
-      <source src="videos/SCG_Loop_Video_1920_converted.mp4" type="video/mp4">
+      <!-- <source src="videos/SCG_Loop_Video_1920_converted.mp4" type="video/mp4"> -->
     </video> 
   </div>
   <div class="homepage-title">
@@ -45,6 +45,30 @@
     var grid = document.querySelector('.header-button-grid');
     var introVideo = document.querySelector('.intro-video');
     var loopVideo = document.querySelector('.loop-video');
+
+    // Detect screen orientation and show the appropriate video
+    var mql = window.matchMedia('(orientation: portrait)');
+    
+    function matchOrientation(m) {
+      if(m.matches) {
+        // Portrait
+        introVideo.innerHTML = '<source src="videos/SoCal_Wires2 16x9VERTICLE.mp4" type="video/mp4">';
+        loopVideo.innerHTML = '<source src="videos/SoCal_Wires2 16x9VERTICLELOOP.mp4" type="video/mp4">';
+      } else {
+        // Landscape
+        introVideo.innerHTML = '<source src="videos/SCG_Intro_Video_1920_converted.mp4" type="video/mp4">';
+        loopVideo.innerHTML = '<source src="videos/SCG_Loop_Video_1920_converted.mp4" type="video/mp4">';
+      }
+    }
+
+    matchOrientation(mql);
+
+    mql.addListener(function(m){
+      matchOrientation(m);
+    })
+    // End Screen orientation detection code
+
+    
 
     //Hide the buttons at the beginning. 
     grid.classList.add('invisible');
