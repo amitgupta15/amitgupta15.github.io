@@ -440,7 +440,7 @@ h1 {
 .rng-process-dl div dd::after {
   content: "";
   display: block;
-  background-image: url('/images/rng/how-it-works/chevron-4x.png');
+  background-image: url('images/rng/how-it-works/chevron-4x.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -455,25 +455,25 @@ h1 {
   display: none;
 }
 .rng-process-dl div:nth-child(1) dt{
-  background-image: url('/images/rng/how-it-works/cattle-4x.png');
+  background-image: url('images/rng/how-it-works/cattle-4x.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
 .rng-process-dl div:nth-child(2) dt{
-  background-image: url('/images/rng/how-it-works/biogas-4x.png');
+  background-image: url('images/rng/how-it-works/biogas-4x.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
 .rng-process-dl div:nth-child(3) dt{
-  background-image: url('/images/rng/how-it-works/biomethane-4x.png');
+  background-image: url('images/rng/how-it-works/biomethane-4x.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
 .rng-process-dl div:nth-child(4) dt{
-  background-image: url('/images/rng/how-it-works/pipeline-4x.png');
+  background-image: url('images/rng/how-it-works/pipeline-4x.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -1017,7 +1017,7 @@ h1 {
   }
   .rng-process-dl dt::after {
     content: " ";
-    background-image: url('/images/rng/how-it-works/chevron-4x.png');
+    background-image: url('images/rng/how-it-works/chevron-4x.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
