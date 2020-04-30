@@ -13,13 +13,10 @@
     <p id="output"><strong>#22MILLION</strong>STRONG</p>
   </div>
   <div>
-    <video class="intro-video show-video" autoplay muted playsinline>
-      <!-- <source src="videos/SCG_Intro_Video_1920_converted.mp4" type="video/mp4"> -->
-    </video> 
-    <video class="loop-video hide-video" muted playsinline loop>
-      <!-- <source src="videos/SCG_Loop_Video_1920_converted.mp4" type="video/mp4"> -->
-    </video> 
+    <div class="intro-video show-video"></div>
+    <div class="loop-video hide-video"></div>
   </div>
+  <div class="semi-transparent-dark-bg"></div>
   <div class="homepage-title">
     <div class="title-block">
       <p>THE FUTURE OF </p>
@@ -45,6 +42,7 @@
     var grid = document.querySelector('.header-button-grid');
     var introVideo = document.querySelector('.intro-video');
     var loopVideo = document.querySelector('.loop-video');
+    var curtain = document.querySelector('.semi-transparent-dark-bg');
 
     // Detect screen orientation and show the appropriate video
     var mql = window.matchMedia('(orientation: portrait)');
@@ -52,12 +50,12 @@
     function matchOrientation(m) {
       if(m.matches) {
         // Portrait
-        introVideo.innerHTML = '<source src="videos/SoCal_Wires2 16x9VERTICLE.mp4" type="video/mp4">';
-        loopVideo.innerHTML = '<source src="videos/SoCal_Wires2 16x9VERTICLELOOP.mp4" type="video/mp4">';
+        introVideo.innerHTML = '<video autoplay muted playsinline><source src="videos/intro-vertical.mp4" type="video/mp4"></video>';
+        loopVideo.innerHTML = '<video class="loop-video-element" muted playsinline loop><source src="videos/loop-vertical.mp4" type="video/mp4"></video>';
       } else {
         // Landscape
-        introVideo.innerHTML = '<source src="videos/SCG_Intro_Video_1920_converted.mp4" type="video/mp4">';
-        loopVideo.innerHTML = '<source src="videos/SCG_Loop_Video_1920_converted.mp4" type="video/mp4">';
+        introVideo.innerHTML = '<video autoplay muted playsinline><source src="videos/SCG_Intro_Video_1920_converted.mp4" type="video/mp4"></video>';
+        loopVideo.innerHTML = '<video class="loop-video-element" muted playsinline loop><source src="videos/SCG_Loop_Video_1920_converted.mp4" type="video/mp4"></video>';
       }
     }
 
@@ -82,6 +80,7 @@
     setTimeout(function(){
       grid.classList.add('visible');
       grid.classList.remove('invisible');
+      curtain.style.display = 'block';
     }, 25000);
 
     // Hide the intro video and show the loop video after 57 seconds
@@ -90,8 +89,9 @@
       introVideo.classList.remove('show-video');
     
       loopVideo.classList.add('show-video');
-      loopVideo.play();
       loopVideo.classList.remove('hide-video');
+      var loopVidElement = document.querySelector('.loop-video-element');
+      loopVidElement.play();
 
     }, 57000);
    
